@@ -31,57 +31,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// פונקציה לטיפול בטופס צור קשר
 async function submitForm(event) {
-  event.preventDefault(); // מונע רענון של הדף בעת שליחת הטופס
+  event.preventDefault();
 
-  // שליפה של הטופס
   const form = document.getElementById('contactForm');
   const formData = new FormData(form);
 
-  // בניית האובייקט לשליחה לשרת
   const data = {
     name: formData.get('name'),
     phone: formData.get('phone'),
     email: formData.get('email'),
-    message: formData.get('message')
+    message: formData.get('message'),
   };
 
   try {
-    // שליחה של הבקשה לשרת
     const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbwv2FcJ33HNlOW6vj3_oWnpM1ENAD80qPsOM-zxq8-WckJiokf6scG1MQeymwpzwrp_SQ/exec',
+      'https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec',
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json' // הגדרה שגוף הבקשה הוא JSON
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data) // המרת האובייקט JSON למחרוזת
+        body: JSON.stringify(data),
       }
     );
 
-    // בדיקה אם התגובה מהשרת תקינה
     if (!response.ok) {
-      throw new Error(`Network response was not ok. Status: ${response.status}`);
+      throw new Error(`Network response was not ok: ${response.status}`);
     }
 
-    // המרת התגובה ל-JSON
     const result = await response.json();
-
-    // טיפול בתגובה
     if (result.status === 'success') {
-      alert('הפרטים נשלחו בהצלחה! תודה שפנית אלינו.');
-      form.reset(); // איפוס הטופס לאחר הצלחה
+      alert('הפרטים נשלחו בהצלחה!');
+      form.reset();
     } else {
       alert('שגיאה בשליחת הפרטים: ' + result.message);
     }
   } catch (error) {
     console.error('Error:', error);
-    alert('שגיאה בשליחת הפרטים. אנא נסה שנית.');
+    alert('שגיאה בשליחת הפרטים. אנא נסה שוב.');
   }
 }
 
-// האזנה לאירוע שליחת הטופס
 document.getElementById('contactForm').addEventListener('submit', submitForm);
 
 
