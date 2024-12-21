@@ -45,7 +45,7 @@ async function submitForm(event) {
   };
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxgWVxeOUufT871Vw4nX8darB-emfqc3lnTgA8Fk3hDbKlfrJTs4VQCHTTIQIGqHDRnLw/exec', { // החלף ב-URL של ה-Web App שלך
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxgWVxeOUufT871Vw4nX8darB-emfqc3lnTgA8Fk3hDbKlfrJTs4VQCHTTIQIGqHDRnLw/exec', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
