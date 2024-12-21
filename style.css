@@ -1,0 +1,365 @@
+/* General Styling */
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #177F75;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #00c4cc;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 90vh; /* כמעט גובה מלא */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: #00c4cc; /* טקסט בצבע ירוק */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+    color: #00c4cc; /* כותרת בצבע ירוק */
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #00c4cc; /* תיאור בצבע ירוק */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    color: #177F75;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.carousel img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-In-Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    background-color: #177F75;
+    text-align: center;
+    color: white;
+}
+
+#contact h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+    background-color: #00c4cc;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #009fa3;
+}
+
+/* Services Section */
+.services-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    color: #177F75;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.services-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #177F75;
+    margin: 10px auto 0;
+}
+
+.service-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    width: 120px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.service-item:hover {
+    transform: scale(1.1);
+    color: #177F75;
+}
+
+.service-icon {
+    font-size: 4rem;
+    color: #177F75;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+.service-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+    }
+
+    .carousel img {
+        width: 90%;
+    }
+
+    .service-icons {
+        gap: 20px;
+    }
+
+    .service-item {
+        width: 100px;
+    }
+}
+/* עיצוב כללי לחלק צור קשר */
+#contact {
+    padding: 60px 20px;
+    background-color: #177F75;
+    color: white;
+}
+
+/* עיצוב כללי לחלק צור קשר */
+#contact {
+    padding: 60px 20px;
+    background-color: #177F75;
+    color: white;
+}
+
+/* טופס יצירת קשר */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: right; /* טקסט מיושר לימין */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00c4cc;
+    box-shadow: 0 0 5px rgba(0, 196, 204, 0.5);
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    background-color: #00c4cc;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background-color: #009fa3;
+    transform: translateY(-2px);
+}
+
+/* פרטי התקשרות */
+.contact-details {
+    margin-top: 40px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: right; /* טקסט מיושר לימין */
+}
+
+.contact-details a {
+    color: #00c4cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #009fa3;
+    text-decoration: underline;
+}
+
+
