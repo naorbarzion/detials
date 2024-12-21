@@ -46,7 +46,7 @@ async function submitForm(event) {
 
   try {
     const response = await fetch(
-      'https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec',
+      'https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbwv2FcJ33HNlOW6vj3_oWnpM1ENAD80qPsOM-zxq8-WckJiokf6scG1MQeymwpzwrp_SQ/exec/exec',
       {
         method: 'POST',
         headers: {
