@@ -50,7 +50,7 @@ async function submitForm(event) {
   try {
     // שליחה של הבקשה לשרת
     const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbxgWVxeOUufT871Vw4nX8darB-emfqc3lnTgA8Fk3hDbKlfrJTs4VQCHTTIQIGqHDRnLw/exec',
+      'https://script.google.com/a/macros/tracer.co.il/s/AKfycbyPLOdIhEGRXTFlGiMnMGK_M9WPfEJxRLAyHqi2d8NtWJhmhMLx9i5fXchmQVa9dN83Sg/exec',
       {
         method: 'POST',
         headers: {
